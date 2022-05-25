@@ -1,8 +1,8 @@
 import { Grid } from '@mui/material';
 import React, { useEffect } from 'react'
-import { getMovies, selectMovies, selectMoviesState } from '../../features/movies/moviesSlice';
+import { getMovies, selectMoviesState } from '../../features/movies/moviesSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks'
-import { MovieShow } from './MovieShow';
+import { MovieCard } from './MovieCard';
 
 export const MovieList = () => {
     const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ export const MovieList = () => {
    <Grid container>
        {
            movies.map((movie :any, index :number) => {
-               return <MovieShow key={movie?.id} movie = {movie}/>
+               return <MovieCard key={movie?.id} movie = {movie}/>
            })
        }
    </Grid>
