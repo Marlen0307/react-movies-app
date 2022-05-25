@@ -1,9 +1,18 @@
-import React from 'react';
-import { Home } from './components/Home';
+import React, { useEffect } from 'react';
+import { fetchMovies } from './service';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { MovieList } from './components/movies/MovieList';
 
 function App() {
+ 
   return (
-    <Home />
+   <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MovieList />} />
+        </Routes>
+      </Router>
+   </>
   );
 }
 
