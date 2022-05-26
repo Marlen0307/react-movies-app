@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { selectMoviesState } from "../../features/movies/moviesSlice";
 import { useAppSelector } from "../../hooks";
+import Loading from "../AppLayout/Loading";
 import { MovieInfo } from "./MovieCard";
 import { useMoviesStyles } from "./MoviesStyles";
 
@@ -13,6 +14,7 @@ export const MovieShow = (props: any) => {
   const moviesState = useAppSelector(selectMoviesState);
   const { movies } = moviesState;
   const selectedMovie = movies.find((movie: any) => movie.id === id);
+  if(!selectedMovie) return <Loading />;
   const {
     image,
     title,
