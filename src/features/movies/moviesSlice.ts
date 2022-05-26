@@ -22,6 +22,7 @@ const initialState = {
     {name:'genres',value: null, comperator: FILTER_COMPERATORS.CONTAINS, label:'Genre'},
     {name:'imDbRating',value: null, comperator: FILTER_COMPERATORS.EQUAL_OR_BIGGER, label:'IMDb Rating'},
   ],
+  selected : null,
   isLoading: false,
 };
 export const moviesSlice: Slice = createSlice({
@@ -37,6 +38,9 @@ export const moviesSlice: Slice = createSlice({
         return filter;
       })
       state.filters = changedFilters;
+    },
+    setSelected : (state :any, action: any) => {
+      state.selected = action.payload;
     }
 
   },
@@ -55,7 +59,7 @@ export const moviesSlice: Slice = createSlice({
       });
   },
 });
-export const { changeFilters } = moviesSlice.actions;
+export const { changeFilters, setSelected } = moviesSlice.actions;
 export const selectMovies = (state: RootState) => state.movies.value;
 export const selectMoviesState = (state: RootState) => state.movies;
 export default moviesSlice.reducer;

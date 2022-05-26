@@ -1,13 +1,19 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { isArray } from "util";
+import { setSelected } from "../../features/movies/moviesSlice";
+import { useAppDispatch } from "../../hooks";
 import { useMoviesStyles } from "./MoviesStyles";
 
 export const MovieCard = ({ movie }: { movie: any }) => {
   const { image, title, description, id } = movie;
   const classes = useMoviesStyles();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const navigateToMovie = (selectedMovie :any) => {
+    dispatch(setSelected(selectedMovie));
+    navigate(`/movies/${selectedMovie?.id}`);
+  }
   return (
     <Grid item md={4}>
       <Paper
@@ -16,7 +22,7 @@ export const MovieCard = ({ movie }: { movie: any }) => {
           minHeight: "400px",
           margin: "5%",
         }}
-        onClick={() => navigate(`/movies/${id}`)}
+        onClick={() => navigateToMovie(movie)}
       >
         <Box
           p={2}
