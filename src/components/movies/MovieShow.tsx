@@ -13,7 +13,6 @@ export const MovieShow = (props: any) => {
   const moviesState = useAppSelector(selectMoviesState);
   const { movies } = moviesState;
   const selectedMovie = movies.find((movie: any) => movie.id === id);
-  console.log(selectedMovie);
   const {
     image,
     title,

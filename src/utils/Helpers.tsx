@@ -21,6 +21,5 @@ export const filterMovies = (movies :any, filters :any) => {
         })
         return isValid;
     });
-    debugger;
     return filtered;
 }
