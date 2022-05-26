@@ -1,4 +1,4 @@
-import { createAsyncThunk, Slice, createSlice, Action } from "@reduxjs/toolkit";
+import { createAsyncThunk, Slice, createSlice } from "@reduxjs/toolkit";
 import { FILTER_COMPERATORS } from "../../constants";
 import { fetchMovies } from "../../service";
 import { RootState } from "../../store";

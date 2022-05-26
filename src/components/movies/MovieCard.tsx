@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../hooks";
 import { useMoviesStyles } from "./MoviesStyles";
 
 export const MovieCard = ({ movie }: { movie: any }) => {
-  const { image, title, description, id } = movie;
+  const { image, title, description } = movie;
   const classes = useMoviesStyles();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

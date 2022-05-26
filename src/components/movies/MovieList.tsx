@@ -11,6 +11,7 @@ export const MovieList = () => {
     const dispatch = useAppDispatch();
     const moviesState = useAppSelector(selectMoviesState);
     const {movies, isLoading, filters} = moviesState;
+    console.log(moviesState)
     useEffect(() => {
         dispatch(getMovies());
       },[dispatch]);

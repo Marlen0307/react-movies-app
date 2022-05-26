@@ -1,4 +1,4 @@
-import { Box, Card, Divider, Grid } from "@mui/material";
+import { Box, Divider, Grid } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { selectMoviesState } from "../../features/movies/moviesSlice";
