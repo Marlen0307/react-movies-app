@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { fetchMovies } from './service';
+import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { MovieList } from './components/movies/MovieList';
 import { MovieShow } from './components/movies/MovieShow';

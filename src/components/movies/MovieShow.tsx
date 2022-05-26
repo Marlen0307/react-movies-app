@@ -28,21 +28,33 @@ export const MovieShow = (props: any) => {
     runtimeStr,
     starList,
     stars,
-  } = selectedMovie
-  const showProps = {description, contentRating, genres, imDbRating, imDbRatingVotes, metacriticRating, plot, runtimeStr, stars}
+  } = selectedMovie;
+  const showProps = {
+    contentRating,
+    genres,
+    imDbRating,
+    imDbRatingVotes,
+    metacriticRating,
+    plot,
+    runtimeStr,
+    stars,
+  };
   return (
     <Grid container margin={3}>
-
-        <Grid item xs={12} md={5}>
-          <Box display={"flex"} justifyContent={"center"}>
-            <img className={`${classes.images}`} src={image} alt={title} />
-          </Box>
-        </Grid>
-        <Grid item xs={12} md>
-            {
-                Object.keys(showProps).map((key: string, index:number) => <><MovieInfo label = {key} val={selectedMovie[key]} /> <Divider /></>)
-            }
-        </Grid>
+      <Grid item xs={12} md={5}>
+        <Box display={"flex"} justifyContent={"center"}>
+          <img className={`${classes.images}`} src={image} alt={title} />
+        </Box>
+        <MovieInfo val={title} />
+        <MovieInfo val={description} />
+      </Grid>
+      <Grid item xs={12} md>
+        {Object.keys(showProps).map((key: string, index: number) => (
+          <>
+            <MovieInfo label={key} val={selectedMovie[key]} /> <Divider />
+          </>
+        ))}
+      </Grid>
     </Grid>
   );
 };
