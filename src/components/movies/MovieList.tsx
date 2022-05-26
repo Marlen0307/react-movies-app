@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { getMovies, selectMoviesState } from '../../features/movies/moviesSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { filterMovies } from '../../utils/Helpers';
+import Loading from '../AppLayout/Loading';
 import Filters from './Filters';
 import { MovieCard } from './MovieCard';
 
@@ -13,7 +14,7 @@ export const MovieList = () => {
     useEffect(() => {
         dispatch(getMovies());
       },[dispatch]);
-    if(isLoading) return <div>Loading...</div>; //TODO: Implement loading view
+    if(isLoading) return <Loading />; //TODO: Implement loading view
  
 
   return (
