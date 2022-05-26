@@ -19,14 +19,12 @@ export const MovieShow = (props: any) => {
     title,
     description,
     contentRating,
-    genreList,
     genres,
     imDbRating,
     imDbRatingVotes,
     metacriticRating,
     plot,
     runtimeStr,
-    starList,
     stars,
   } = selectedMovie;
   const showProps = {
@@ -50,9 +48,9 @@ export const MovieShow = (props: any) => {
       </Grid>
       <Grid item xs={12} md>
         {Object.keys(showProps).map((key: string, index: number) => (
-          <>
+          <React.Fragment key={`${title}_${key}_${index}`}>
             <MovieInfo label={key} val={selectedMovie[key]} /> <Divider />
-          </>
+          </React.Fragment>
         ))}
       </Grid>
     </Grid>
